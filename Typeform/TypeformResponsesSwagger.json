@@ -177,34 +177,17 @@
                         "type": "string"
                     },
                     {
-                        "name": "search",
-                        "in": "query",
-                        "required": true,
-                        "type": "string",
-                        "description": "Returns items that contain the specified string."
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "required": true,
-                        "type": "integer",
-                        "format": "int32",
-                        "description": "The page of results to retrieve. Default 1 is the first page of results."
-                    },
-                    {
                         "name": "page_size",
                         "in": "query",
-                        "required": true,
-                        "type": "integer",
-                        "format": "int32",
-                        "description": "Number of results to retrieve per page. Default is 10. Maximum is 200."
+                        "required": false,
+                        "default": 200,
+                        "type": "integer"
                     },
                     {
                         "name": "workspace_id",
                         "in": "query",
-                        "required": true,
-                        "type": "string",
-                        "description": "Retrieve typeforms for the specified workspace."
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "Content-Type",
@@ -234,7 +217,8 @@
                                     "properties": {
                                         "id": {
                                             "type": "string",
-                                            "description": "id"
+                                            "description": "id",
+                                            "x-bravo-name": "form_id"
                                         },
                                         "title": {
                                             "type": "string",
@@ -299,7 +283,16 @@
                 "responses": {
                     "200": {
                         "description": "",
-                        "headers": {}
+                        "headers": {},
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "description": "title"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -505,27 +498,11 @@
                         "type": "string"
                     },
                     {
-                        "name": "search",
-                        "in": "query",
-                        "required": true,
-                        "type": "string",
-                        "description": "Returns items that contain the specified string."
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "required": true,
-                        "type": "integer",
-                        "format": "int32",
-                        "description": "The page of results to retrieve. Default 1 is the first page of results."
-                    },
-                    {
                         "name": "page_size",
                         "in": "query",
-                        "required": true,
-                        "type": "integer",
-                        "format": "int32",
-                        "description": "Number of results to retrieve per page. Default is 10. Maximum is 200."
+                        "required": false,
+                        "default": 200,
+                        "type": "integer"
                     },
                     {
                         "name": "Content-Type",
@@ -568,7 +545,8 @@
                                         },
                                         "id": {
                                             "type": "string",
-                                            "description": "id"
+                                            "description": "id",
+                                            "x-bravo-name": "workspace_id"
                                         },
                                         "name": {
                                             "type": "string",
