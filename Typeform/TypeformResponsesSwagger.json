@@ -475,6 +475,88 @@
                 }
             }
         },
+        "/summary/{form_id}/metrics": {
+            "get": {
+                "summary": "Retrieve form summary information",
+                "tags": [
+                    "Summary"
+                ],
+                "operationId": "Retrievesummary",
+                "deprecated": false,
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": false,
+                        "default": "Bearer {token}",
+                        "type": "string"
+                    },
+                    {
+                        "name": "form_id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "Unique ID for the form. Find in your form URL. For example, in the URL \"https://mysite.typeform.com/to/u6nXL7\" the form_id is u6nXL7."
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "description": ""
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "headers": {},
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "summary": {
+                                    "type": "object",
+                                    "properties": {
+                                        "average_time": {
+                                            "type": "integer",
+                                            "description": "average time"
+                                        },
+                                        "completion_rate": {
+                                            "type": "integer",
+                                            "description": "completion rate"
+                                        },
+                                        "responses_count": {
+                                            "type": "integer",
+                                            "description": "responses count"
+                                        },
+                                        "total_visits": {
+                                            "type": "integer",
+                                            "description": "total visits"
+                                        },
+                                        "unique_visits": {
+                                            "type": "integer",
+                                            "description": "unique visits"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/workspaces": {
             "get": {
                 "summary": "Retrieve workspaces",
@@ -625,6 +707,9 @@
         },
         {
             "name": "User"
+        },
+        {
+            "name": "Summary"
         },
         {
             "name": "Workspaces"
