@@ -156,7 +156,7 @@
         },
         "/forms": {
             "get": {
-                "summary": "Retrieve forms",
+                "summary": "LIST FORMS",
                 "tags": [
                     "Forms"
                 ],
@@ -299,7 +299,7 @@
         },
         "/insights/{form_id}/summary": {
             "get": {
-                "summary": "Retrieve Form Insights",
+                "summary": "FORM SUMMARY PAID",
                 "tags": [
                     "Form Insights"
                 ],
@@ -477,7 +477,7 @@
         },
         "/summary/{form_id}/metrics": {
             "get": {
-                "summary": "Retrieve form summary information",
+                "summary": "FORM SUMMARY FREE",
                 "tags": [
                     "Summary"
                 ],
@@ -559,7 +559,7 @@
         },
         "/workspaces": {
             "get": {
-                "summary": "Retrieve workspaces",
+                "summary": "LIST WORKSPACES",
                 "tags": [
                     "Workspaces"
                 ],
